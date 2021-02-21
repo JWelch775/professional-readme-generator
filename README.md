@@ -1,4 +1,4 @@
-# README Generator
+# sdfasdf
   
 #### Table of Contents
 1. [Description](#description)
@@ -8,21 +8,21 @@
 5. [License](#license)
 6. [Questions](#questions)
 ## Description
-* This application will allow a user to generate a professional README by answering prompts
+* asdfasdf
 ## Installation 
-* By downloading the application from this GitHub repository
+* asdfasdf
 ## Usage 
-* To use the application simply download it and navigate to your command prompt. Then navigate to the root directory of this application and run it by typing in 'node index' this will run the application and trigger the prompts
+* asdfasdf
 ## Credits
-* Justin Welch
+* asdfasdf
 
 ## License
     
 ![MIT](https://img.shields.io/badge/license-undefined-blue.svg)
 
-This project is covered under the MIT License ![MIT](https://opensource.org/licenses/MIT)
+This project is covered under the license License [MIT](https://opensource.org/licenses/MIT)
     
 
 ## Questions
-* For additional help or if you would like to contribute to this project reach out to me at Justin.Welch075@gmail.com
-* Follow me on Github at [JWelch775](http://github.com/JWelch775)
+* For additional help or if you would like to contribute to this project reach out to me at fasdf
+* Follow me on Github at [asdfasdf](http://github.com/asdfasdf)

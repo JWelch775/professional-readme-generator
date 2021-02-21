@@ -5,8 +5,8 @@ const fs = require('fs');
 const util = require('util');
 const writeFile = util.promisify(fs.writeFile);
 
-function promptUser() { 
 
+function promptUser() { 
     return inquirer.prompt([
     {
         type: 'input',
@@ -83,10 +83,7 @@ function promptUser() {
         type: 'checkbox',
         name: 'license',
         message: 'Choose a license. (Required)',
-        choices: [
-            'MIT',
-            'None'
-        ],
+        choices: ['MIT', 'None'],
         validate: nameInput => {
             if(nameInput) {
                 return true;
@@ -128,9 +125,9 @@ function promptUser() {
 }
 
 promptUser()
-  .then(function(answers) {
-    const readme = generateMarkdown(answers);
-
+  .then(function(data) {
+    const readme = generateMarkdown(data);
+    const license = data.license
  
     return writeFile("README.md", readme);
   })

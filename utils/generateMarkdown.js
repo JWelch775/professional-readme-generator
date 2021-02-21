@@ -1,8 +1,9 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== 'None') {
-    return `![MIT](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  if (license !== [1]) {
+    return `![MIT](https://img.shields.io/badge/license-MIT-blue.svg)`;
+    console.log(license);
   } else {
       return '';
   }
@@ -11,9 +12,9 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'None' ) {
+  if (license !== [1] ) {
     return `
-This project is covered under the MIT License ![MIT](https://opensource.org/licenses/MIT)
+This project is covered under the license License [MIT](https://opensource.org/licenses/MIT)
     `;
   }
 
@@ -34,13 +35,8 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answers) {
-  const license = answers.license;
-  const badge = renderLicenseBadge();
-  const link = renderLicenseLink();
-  const licenseSection = renderLicenseSection();
-
-  return `# ${answers.title}
+function generateMarkdown(data) {
+  return `# ${data.title}
   
 #### Table of Contents
 1. [Description](#description)
@@ -50,20 +46,20 @@ function generateMarkdown(answers) {
 5. [License](#license)
 6. [Questions](#questions)
 ## Description
-* ${answers.description}
+* ${data.description}
 ## Installation 
-* ${answers.installation}
+* ${data.installation}
 ## Usage 
-* ${answers.usage}
+* ${data.usage}
 ## Credits
-* ${answers.credits}
-${licenseSection}
-${badge}
-${link}
+* ${data.credits}
+${renderLicenseSection()}
+${renderLicenseBadge()}
+${renderLicenseLink()}
 
 ## Questions
-* For additional help or if you would like to contribute to this project reach out to me at ${answers.email}
-* Follow me on Github at [${answers.github}](http://github.com/${answers.github})`;
+* For additional help or if you would like to contribute to this project reach out to me at ${data.email}
+* Follow me on Github at [${data.github}](http://github.com/${data.github})`;
 
 }
 
