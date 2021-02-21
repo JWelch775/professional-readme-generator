@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 const util = require('util');
 const writeFile = util.promisify(fs.writeFile);
@@ -82,9 +83,9 @@ function promptUser() {
         type: 'checkbox',
         name: 'license',
         message: 'Choose a license. (Required)',
-        choises: [
-            '[MIT License](LICENSE.txt)',
-            '[GNU GPLv3 License](COPYING.txt)',
+        choices: [
+            'MIT',
+            'None'
         ],
         validate: nameInput => {
             if(nameInput) {
@@ -112,7 +113,7 @@ function promptUser() {
 
     {
         type: 'input',
-        name: 'email',
+        name: 'github',
         message: 'Please enter your GitHub username (required)',
         validate: nameInput => {
             if(nameInput) {
@@ -126,11 +127,25 @@ function promptUser() {
 ]);
 }
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+promptUser()
+  .then(function(answers) {
+    const readme = generateMarkdown(answers);
 
-// TODO: Create a function to initialize app
-function init() {}
+ 
+    return writeFile("README.md", readme);
+  })
+  .then(function() {
+    console.log(" README.md has been created!");
+  })
+  .catch(function(err) {
+    console.log(err);
+  });
 
-// Function call to initialize app
-init();
+
+
+
+
+
+
+
+
